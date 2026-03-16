@@ -1,9 +1,6 @@
 import asyncio
 import os
-import time
 import re
-import json
-import random
 from datetime import datetime
 import pandas as pd
 from playwright.async_api import async_playwright, TimeoutError
@@ -22,9 +19,7 @@ EXCEL_PATH = os.path.join(OUTPUT_DIR, "correos.xlsx")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# DEMO LIMIT
 MAX_MENSAJES_DEMO = 50
-
 
 # =========================
 # UTILS
@@ -61,13 +56,11 @@ async def detect_ruc_from_session(page) -> str:
     pat = re.compile(r"\bRUC\s*(?:N\s*[°º]?\s*)?[:\s]*([0-9]{11})\b", re.IGNORECASE)
 
     for fr in page.frames:
-
         try:
             txt = await fr.inner_text("body")
             m = pat.search(txt or "")
             if m:
                 return m.group(1)
-
         except:
             pass
 
@@ -92,27 +85,30 @@ async def run_scraper(ruc_input):
 
     async with async_playwright() as p:
 
-        browser = await p.chromium.launch(
-            headless=True
-        )
+        browser = await p.chromium.launch(headless=True)
 
         context = await browser.new_context()
         page = await context.new_page()
 
-        print("🔐 Abriendo SUNAT...")
+        print("Abriendo SUNAT...")
 
         await page.goto(URL_BUZON)
 
-        input(
-            "\n👉 Haz LOGIN MANUAL en SUNAT y entra al buzón.\nPresiona ENTER para continuar..."
-        )
+        print("Esperando login manual en SUNAT (60 segundos)...")
+
+        try:
+            await page.wait_for_selector("#listaMensajes", timeout=60000)
+            print("Login detectado")
+        except TimeoutError:
+            await browser.close()
+            raise Exception(
+                "No se detectó login en SUNAT dentro de 60 segundos."
+            )
 
         ruc = await detect_ruc_from_session(page) or ruc_input
 
         ip_cliente = socket.gethostbyname(socket.gethostname())
         user_id = getpass.getuser()
-
-        await page.wait_for_selector("#listaMensajes")
 
         mensajes = await page.query_selector_all("#listaMensajes > li")
 
@@ -142,14 +138,11 @@ async def run_scraper(ruc_input):
             await titulo_el.click()
 
             try:
-
                 await page.wait_for_selector(
                     "div.contenedor-correo, div.panel-body",
                     timeout=20000
                 )
-
             except TimeoutError:
-
                 continue
 
             cuerpo = await extract_cuerpo_from_detail(page)
@@ -157,7 +150,6 @@ async def run_scraper(ruc_input):
             fecha_notificacion = ""
 
             try:
-
                 raw = (
                     await page.locator("#idFechaDetalle")
                     .first.inner_text()
@@ -211,4 +203,4 @@ async def run_scraper(ruc_input):
 
     df.to_excel(EXCEL_PATH, index=False)
 
-    return EXCEL_PATH, len(df)
+    return EXCEL_PATH
