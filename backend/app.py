@@ -7,7 +7,7 @@ from email_sender import send_excel
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="backend/templates")
+templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/")
