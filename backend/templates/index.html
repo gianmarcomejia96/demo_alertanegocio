@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>SUNAT Mailbox Monitor</title>
+</head>
+
+<body>
+
+<h2>Consulta Buzón SUNAT</h2>
+
+<input id="ruc" placeholder="Ingresa RUC">
+
+<button onclick="consultar()">Consultar</button>
+
+<script>
+
+function consultar(){
+
+let ruc = document.getElementById("ruc").value
+
+window.location = "/consulta/" + ruc
+
+}
+
+</script>
+
+</body>
+
+</html>
