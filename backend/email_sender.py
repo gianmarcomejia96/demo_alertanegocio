@@ -1,3 +1,4 @@
+import os
 import smtplib
 from email.message import EmailMessage
 
@@ -7,7 +8,7 @@ def send_excel(path):
     msg = EmailMessage()
 
     msg["Subject"] = "SUNAT Scraper Resultado"
-    msg["From"] = "tu_email@gmail.com"
+    msg["From"] =  os.environ["EMAIL_USER"]
     msg["To"] = "gianmarcomejia@gmail.com"
 
     msg.set_content("Resultado del scraping.")
