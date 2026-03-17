@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Body
+from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 import json
@@ -10,9 +10,15 @@ from email_sender import send_excel
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
+# =========================
+# PATHS
+# =========================
 
-SESSION_FILE = os.path.join(os.path.dirname(__file__), "session.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
+
+SESSION_FILE = os.path.join(BASE_DIR, "session.json")
 
 
 # =========================
@@ -29,17 +35,25 @@ def home(request: Request):
 # =========================
 
 @app.post("/save-session")
-async def save_session(cookies: list = Body(...)):
+async def save_session(request: Request):
+
+    try:
+        data = await request.json()
+    except:
+        return {"error": "No se pudo leer el JSON"}
+
+    if "cookies" not in data:
+        return {"error": "Formato inválido: falta 'cookies'"}
 
     session = {
-        "cookies": cookies,
+        "cookies": data["cookies"],
         "origins": []
     }
 
     with open(SESSION_FILE, "w") as f:
         json.dump(session, f)
 
-    print("Session saved")
+    print("✅ Session guardada correctamente")
 
     return {"status": "session saved"}
 
@@ -53,17 +67,26 @@ async def consulta(request: Request, ruc: str):
 
     ip = request.client.host
 
+    # Control de uso
     if not check_usage(ip):
         return {"error": "Límite de ejecuciones alcanzado (2)"}
 
+    # Validar sesión
     if not os.path.exists(SESSION_FILE):
         return {"error": "Debes conectar primero tu sesión SUNAT"}
 
-    excel_path = await run_scraper(ruc)
+    try:
+        excel_path = await run_scraper(ruc)
+    except Exception as e:
+        print(f"❌ Error en scraper: {e}")
+        return {"error": "Error ejecutando scraper"}
 
     register_usage(ip)
 
-    send_excel(excel_path)
+    try:
+        send_excel(excel_path)
+    except Exception as e:
+        print(f"⚠️ Error enviando correo: {e}")
 
     return FileResponse(
         excel_path,
