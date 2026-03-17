@@ -23,7 +23,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
 RUN python -m playwright install chromium
 
 EXPOSE 10000
