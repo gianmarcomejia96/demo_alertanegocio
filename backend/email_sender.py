@@ -23,6 +23,6 @@ def send_excel(path):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
 
-        smtp.login("tu_email@gmail.com", "APP_PASSWORD")
+        smtp.login(os.environ["EMAIL_USER"], os.environ["EMAIL_PASS"])
 
         smtp.send_message(msg)

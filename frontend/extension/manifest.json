@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "SUNAT Session Sender",
+  "version": "1.0",
+
+  "permissions": ["cookies"],
+
+  "host_permissions": [
+    "https://*.sunat.gob.pe/*",
+    "https://demo-alertanegocio.onrender.com/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

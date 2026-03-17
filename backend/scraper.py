@@ -87,8 +87,10 @@ async def run_scraper(ruc_input):
 
         browser = await p.chromium.launch(headless=True)
 
+        SESSION_FILE = os.path.join(BASE_DIR, "session.json")
+
         context = await browser.new_context(
-            storage_state="session.json"
+            storage_state=SESSION_FILE
         )
         page = await context.new_page()
 
