@@ -1,0 +1,150 @@
+2026-03-16T23:31:06.408981217Z ╔════════════════════════════════════════════════════════════╗
+2026-03-16T23:31:06.408983487Z ║ Looks like Playwright was just installed or updated.       ║
+2026-03-16T23:31:06.408985647Z ║ Please run the following command to download new browsers: ║
+2026-03-16T23:31:06.408987837Z ║                                                            ║
+2026-03-16T23:31:06.408990087Z ║     playwright install                                     ║
+2026-03-16T23:31:06.408992287Z ║                                                            ║
+2026-03-16T23:31:06.408994528Z ║ <3 Playwright Team                                         ║
+2026-03-16T23:31:06.408996828Z ╚════════════════════════════════════════════════════════════╝
+2026-03-16T23:39:45.656835256Z ==> Deploying...
+2026-03-16T23:39:45.706647867Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-03-16T23:40:18.10309353Z ==> Running 'uvicorn app:app --host 0.0.0.0 --port 10000'
+2026-03-16T23:40:32.284044706Z INFO:     Started server process [59]
+2026-03-16T23:40:32.284855215Z INFO:     Waiting for application startup.
+2026-03-16T23:40:32.284867795Z INFO:     Application startup complete.
+2026-03-16T23:40:32.284871815Z INFO:     Uvicorn running on http://0.0.0.0:10000 (Press CTRL+C to quit)
+2026-03-16T23:40:33.213597635Z INFO:     127.0.0.1:53016 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+2026-03-16T23:40:37.792828781Z ==> Your service is live 🎉
+2026-03-16T23:40:37.972057816Z ==> 
+2026-03-16T23:40:37.973944893Z ==> ///////////////////////////////////////////////////////////
+2026-03-16T23:40:37.97587346Z ==> 
+2026-03-16T23:40:37.977550923Z ==> Available at your primary URL https://demo-alertanegocio.onrender.com
+2026-03-16T23:40:37.979368769Z ==> 
+2026-03-16T23:40:37.981179394Z ==> ///////////////////////////////////////////////////////////
+2026-03-16T23:40:38.195831782Z INFO:     34.82.80.145:0 - "GET / HTTP/1.1" 200 OK
+2026-03-16T23:41:36.570746627Z INFO:     Shutting down
+2026-03-16T23:41:36.671257078Z INFO:     Waiting for application shutdown.
+2026-03-16T23:41:36.671376871Z INFO:     Application shutdown complete.
+2026-03-16T23:41:36.671445202Z INFO:     Finished server process [41]
+2026-03-16T23:45:38.782267568Z ==> Detected service running on port 10000
+2026-03-16T23:45:38.871754689Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2026-03-16T23:56:44.94089268Z INFO:     Shutting down
+2026-03-16T23:56:45.041422257Z INFO:     Waiting for application shutdown.
+2026-03-16T23:56:45.041540289Z INFO:     Application shutdown complete.
+2026-03-16T23:56:45.041609631Z INFO:     Finished server process [59]
+2026-03-17T00:13:52.085435114Z ==> Running 'uvicorn app:app --host 0.0.0.0 --port 10000'
+2026-03-17T00:14:05.893300113Z INFO:     Started server process [41]
+2026-03-17T00:14:05.893325704Z INFO:     Waiting for application startup.
+2026-03-17T00:14:05.893604641Z INFO:     Application startup complete.
+2026-03-17T00:14:05.893941211Z INFO:     Uvicorn running on http://0.0.0.0:10000 (Press CTRL+C to quit)
+2026-03-17T00:16:18.72669958Z INFO:     179.6.7.121:0 - "POST /save-session HTTP/1.1" 404 Not Found
+2026-03-17T00:17:24.732894154Z INFO:     179.6.7.121:0 - "POST /save-session HTTP/1.1" 404 Not Found
+2026-03-17T00:18:54.894080081Z INFO:     179.6.7.121:0 - "GET / HTTP/1.1" 200 OK
+2026-03-17T00:27:03.437039149Z ==> Deploying...
+2026-03-17T00:27:03.501038041Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-03-17T00:27:44.113717714Z ==> Running 'uvicorn app:app --host 0.0.0.0 --port 10000'
+2026-03-17T00:27:52.72131788Z INFO:     Started server process [59]
+2026-03-17T00:27:52.721349501Z INFO:     Waiting for application startup.
+2026-03-17T00:27:52.721581276Z INFO:     Application startup complete.
+2026-03-17T00:27:52.721867652Z INFO:     Uvicorn running on http://0.0.0.0:10000 (Press CTRL+C to quit)
+2026-03-17T00:27:53.304557625Z INFO:     127.0.0.1:42138 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+2026-03-17T00:27:57.749466832Z ==> Your service is live 🎉
+2026-03-17T00:27:57.865765687Z ==> 
+2026-03-17T00:27:57.867961401Z ==> ///////////////////////////////////////////////////////////
+2026-03-17T00:27:57.870668534Z ==> 
+2026-03-17T00:27:57.872462438Z ==> Available at your primary URL https://demo-alertanegocio.onrender.com
+2026-03-17T00:27:57.874258194Z ==> 
+2026-03-17T00:27:57.876210212Z ==> ///////////////////////////////////////////////////////////
+2026-03-17T00:27:57.918201346Z INFO:     35.247.111.159:0 - "GET / HTTP/1.1" 500 Internal Server Error
+2026-03-17T00:27:57.925133656Z ERROR:    Exception in ASGI application
+2026-03-17T00:27:57.925147536Z Traceback (most recent call last):
+2026-03-17T00:27:57.925152136Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+2026-03-17T00:27:57.925157256Z     result = await app(  # type: ignore[func-returns-value]
+2026-03-17T00:27:57.925160376Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925163516Z         self.scope, self.receive, self.send
+2026-03-17T00:27:57.925167046Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925170237Z     )
+2026-03-17T00:27:57.925173326Z     ^
+2026-03-17T00:27:57.925176587Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+2026-03-17T00:27:57.925179877Z     return await self.app(scope, receive, send)
+2026-03-17T00:27:57.925182747Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925186027Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1160, in __call__
+2026-03-17T00:27:57.925189477Z     await super().__call__(scope, receive, send)
+2026-03-17T00:27:57.925192847Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+2026-03-17T00:27:57.925196507Z     await self.middleware_stack(scope, receive, send)
+2026-03-17T00:27:57.925199747Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+2026-03-17T00:27:57.925203477Z     raise exc
+2026-03-17T00:27:57.925206447Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+2026-03-17T00:27:57.925210067Z     await self.app(scope, receive, _send)
+2026-03-17T00:27:57.925212827Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+2026-03-17T00:27:57.925217718Z     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2026-03-17T00:27:57.925220558Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-03-17T00:27:57.925223398Z     raise exc
+2026-03-17T00:27:57.925226268Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-03-17T00:27:57.925229048Z     await app(scope, receive, sender)
+2026-03-17T00:27:57.925232238Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+2026-03-17T00:27:57.925234948Z     await self.app(scope, receive, send)
+2026-03-17T00:27:57.925239018Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+2026-03-17T00:27:57.925242198Z     await self.middleware_stack(scope, receive, send)
+2026-03-17T00:27:57.925245158Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+2026-03-17T00:27:57.925261348Z     await route.handle(scope, receive, send)
+2026-03-17T00:27:57.925264999Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+2026-03-17T00:27:57.925268259Z     await self.app(scope, receive, send)
+2026-03-17T00:27:57.925271169Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 130, in app
+2026-03-17T00:27:57.925274619Z     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2026-03-17T00:27:57.925277959Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-03-17T00:27:57.925281579Z     raise exc
+2026-03-17T00:27:57.925285199Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-03-17T00:27:57.925288629Z     await app(scope, receive, sender)
+2026-03-17T00:27:57.925292099Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 116, in app
+2026-03-17T00:27:57.925295519Z     response = await f(request)
+2026-03-17T00:27:57.925297499Z                ^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925299519Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 670, in app
+2026-03-17T00:27:57.925301519Z     raw_response = await run_endpoint_function(
+2026-03-17T00:27:57.925303459Z                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925305969Z     ...<3 lines>...
+2026-03-17T00:27:57.92530792Z     )
+2026-03-17T00:27:57.925310349Z     ^
+2026-03-17T00:27:57.92531528Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 326, in run_endpoint_function
+2026-03-17T00:27:57.92531736Z     return await run_in_threadpool(dependant.call, **values)
+2026-03-17T00:27:57.92531938Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.92532131Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+2026-03-17T00:27:57.92532339Z     return await anyio.to_thread.run_sync(func)
+2026-03-17T00:27:57.92532535Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.92532779Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+2026-03-17T00:27:57.92532985Z     return await get_async_backend().run_sync_in_worker_thread(
+2026-03-17T00:27:57.92533179Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.92533383Z         func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+2026-03-17T00:27:57.9253505Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.92535409Z     )
+2026-03-17T00:27:57.925357101Z     ^
+2026-03-17T00:27:57.925360821Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+2026-03-17T00:27:57.925364111Z     return await future
+2026-03-17T00:27:57.925367531Z            ^^^^^^^^^^^^
+2026-03-17T00:27:57.925370751Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+2026-03-17T00:27:57.925372831Z     result = context.run(func, *args)
+2026-03-17T00:27:57.925374851Z   File "/opt/render/project/src/backend/app.py", line 24, in home
+2026-03-17T00:27:57.925376861Z     return templates.TemplateResponse("index.html", {"request": request})
+2026-03-17T00:27:57.925379031Z            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925385901Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/templating.py", line 209, in TemplateResponse
+2026-03-17T00:27:57.925387881Z     template = self.get_template(name)
+2026-03-17T00:27:57.925390081Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/starlette/templating.py", line 132, in get_template
+2026-03-17T00:27:57.925392101Z     return self.env.get_template(name)
+2026-03-17T00:27:57.925394101Z            ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+2026-03-17T00:27:57.925396041Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/jinja2/environment.py", line 1016, in get_template
+2026-03-17T00:27:57.925398051Z     return self._load_template(name, globals)
+2026-03-17T00:27:57.925400071Z            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925401991Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/jinja2/environment.py", line 975, in _load_template
+2026-03-17T00:27:57.925403962Z     template = self.loader.load(self, name, self.make_globals(globals))
+2026-03-17T00:27:57.925405951Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/jinja2/loaders.py", line 126, in load
+2026-03-17T00:27:57.925407952Z     source, filename, uptodate = self.get_source(environment, name)
+2026-03-17T00:27:57.925410272Z                                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+2026-03-17T00:27:57.925412292Z   File "/opt/render/project/src/.venv/lib/python3.14/site-packages/jinja2/loaders.py", line 209, in get_source
+2026-03-17T00:27:57.925414282Z     raise TemplateNotFound(
+2026-03-17T00:27:57.925416242Z     ...<2 lines>...
+2026-03-17T00:27:57.925418192Z     )
+2026-03-17T00:27:57.925420592Z jinja2.exceptions.TemplateNotFound: 'index.html' not found in search path: 'backend/templates'
+2026-03-17T00:28:55.114180366Z INFO:     Shutting down
+2026-03-17T00:28:55.214632637Z INFO:     Waiting for application shutdown.
+2026-03-17T00:28:55.21474427Z INFO:     Application shutdown complete.
+2026-03-17T00:28:55.214838453Z INFO:     Finished server process [41]
