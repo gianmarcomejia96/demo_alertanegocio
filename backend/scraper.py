@@ -85,7 +85,10 @@ async def run_scraper(ruc_input):
 
     async with async_playwright() as p:
 
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-dev-shm-usage"]
+        )
 
         SESSION_FILE = os.path.join(BASE_DIR, "session.json")
 
