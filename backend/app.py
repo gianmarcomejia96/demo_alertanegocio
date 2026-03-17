@@ -10,7 +10,7 @@ from email_sender import send_excel
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="backend/templates")
+templates = Jinja2Templates(directory="templates")
 
 SESSION_FILE = os.path.join(os.path.dirname(__file__), "session.json")
 
