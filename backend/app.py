@@ -4,7 +4,7 @@ from fastapi.templating import Jinja2Templates
 import json
 import os
 
-from scraper import run_scraper
+from backend.scraper import run_scraper
 from database import check_usage, register_usage
 from email_sender import send_excel
 
