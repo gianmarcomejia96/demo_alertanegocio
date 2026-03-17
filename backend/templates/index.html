@@ -1,53 +1,83 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
 <head>
-<title>Alerta SUNAT Demo</title>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Alerta SUNAT</title>
 </head>
 
-<body style="font-family:Arial">
+<body style="font-family: Arial; text-align: center; margin-top: 60px;">
 
-<h2>Demo Alerta SUNAT</h2>
+```
+<h2>🚨 Alerta SUNAT</h2>
 
-<p><b>Paso 1:</b> Loguéate primero en SUNAT</p>
+<p><b>Paso 1:</b> Inicia sesión en SUNAT</p>
 
 <button onclick="abrirSunat()">
-1️⃣ Abrir SUNAT
+    1️⃣ Abrir SUNAT
 </button>
 
 <br><br>
 
-<p><b>Paso 2:</b> Ingresa tu RUC</p>
+<p><b>Paso 2:</b> Conectar sesión</p>
 
-<input id="ruc" placeholder="Ingresa tu RUC">
+<button onclick="guardarSesion()">
+    🔐 Conectar sesión
+</button>
+
+<br><br>
+
+<p><b>Paso 3:</b> Ingresa tu RUC</p>
+
+<input id="ruc" placeholder="Ingresa tu RUC" style="padding:8px; width:220px;">
+
+<br><br>
 
 <button onclick="consultar()">
-2️⃣ Consultar buzón
+    📊 Consultar buzón
 </button>
 
 <script>
-
-function abrirSunat(){
-    window.open(
-        "https://e-menu.sunat.gob.pe/cl-ti-itmenu/MenuInternet.htm?exe=buzon",
-        "_blank"
-    )
-}
-
-function consultar(){
-
-    const ruc = document.getElementById("ruc").value
-
-    if(!ruc){
-        alert("Ingresa RUC")
-        return
+    function abrirSunat() {
+        window.open(
+            "https://e-menu.sunat.gob.pe/cl-ti-itmenu/MenuInternet.htm?exe=buzon",
+            "_blank"
+        );
     }
 
-    window.location.href = "/consulta/" + ruc
+    function guardarSesion() {
+        fetch("/save-session", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                cookies: []
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("✅ Sesión conectada correctamente");
+            console.log(data);
+        })
+        .catch(error => {
+            alert("❌ Error al conectar sesión");
+            console.error(error);
+        });
+    }
 
-}
+    function consultar() {
+        var ruc = document.getElementById("ruc").value;
 
+        if (!ruc) {
+            alert("⚠️ Ingresa un RUC");
+            return;
+        }
+
+        window.location.href = "/consulta/" + ruc;
+    }
 </script>
+```
 
 </body>
 </html>
