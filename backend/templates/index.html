@@ -1,31 +1,53 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-<title>SUNAT Mailbox Monitor</title>
+<title>Alerta SUNAT Demo</title>
+<meta charset="UTF-8">
 </head>
 
-<body>
+<body style="font-family:Arial">
 
-<h2>Consulta Buzón SUNAT</h2>
+<h2>Demo Alerta SUNAT</h2>
 
-<input id="ruc" placeholder="Ingresa RUC">
+<p><b>Paso 1:</b> Loguéate primero en SUNAT</p>
 
-<button onclick="consultar()">Consultar</button>
+<button onclick="abrirSunat()">
+1️⃣ Abrir SUNAT
+</button>
+
+<br><br>
+
+<p><b>Paso 2:</b> Ingresa tu RUC</p>
+
+<input id="ruc" placeholder="Ingresa tu RUC">
+
+<button onclick="consultar()">
+2️⃣ Consultar buzón
+</button>
 
 <script>
 
+function abrirSunat(){
+    window.open(
+        "https://e-menu.sunat.gob.pe/cl-ti-itmenu/MenuInternet.htm?exe=buzon",
+        "_blank"
+    )
+}
+
 function consultar(){
 
-let ruc = document.getElementById("ruc").value
+    const ruc = document.getElementById("ruc").value
 
-window.location = "/consulta/" + ruc
+    if(!ruc){
+        alert("Ingresa RUC")
+        return
+    }
+
+    window.location.href = "/consulta/" + ruc
 
 }
 
 </script>
 
 </body>
-
 </html>

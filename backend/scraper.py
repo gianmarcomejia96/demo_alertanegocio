@@ -87,24 +87,26 @@ async def run_scraper(ruc_input):
 
         browser = await p.chromium.launch(headless=True)
 
-        context = await browser.new_context()
+        context = await browser.new_context(
+            storage_state="session.json"
+        )
         page = await context.new_page()
 
         print("Abriendo SUNAT...")
 
         await page.goto(URL_BUZON)
 
-        print("Esperando login manual en SUNAT (60 segundos)...")
+        print("Verificando sesión SUNAT...")
 
         try:
-            await page.wait_for_selector("#listaMensajes", timeout=60000)
-            print("Login detectado")
+            await page.wait_for_selector("#listaMensajes", timeout=10000)
         except TimeoutError:
-            await browser.close()
-            raise Exception(
-                "No se detectó login en SUNAT dentro de 60 segundos."
-            )
 
+            await browser.close()
+
+            raise Exception(
+                "Debes loguearte primero en SUNAT usando el botón 'Abrir SUNAT'."
+            )
         ruc = await detect_ruc_from_session(page) or ruc_input
 
         ip_cliente = socket.gethostbyname(socket.gethostname())
