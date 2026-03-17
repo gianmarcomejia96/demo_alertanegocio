@@ -1,100 +1,53 @@
-2026-03-17T02:20:17.84964313Z     return callback(*args, **kwargs)
-2026-03-17T02:20:17.84965443Z            ^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.84965743Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-2026-03-17T02:20:17.849832344Z     run(
-2026-03-17T02:20:17.849838844Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-2026-03-17T02:20:17.850016268Z     server.run()
-2026-03-17T02:20:17.850021438Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-2026-03-17T02:20:17.85010639Z     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-2026-03-17T02:20:17.850169941Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.850175061Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-2026-03-17T02:20:17.850248863Z     return runner.run(main)
-2026-03-17T02:20:17.850252773Z            ^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.850256273Z   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-2026-03-17T02:20:17.850360686Z     return self._loop.run_until_complete(task)
-2026-03-17T02:20:17.850365276Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.850376486Z   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-2026-03-17T02:20:17.850593661Z     return future.result()
-2026-03-17T02:20:17.850600651Z            ^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.850603121Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-2026-03-17T02:20:17.850708753Z     await self._serve(sockets)
-2026-03-17T02:20:17.850713573Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-2026-03-17T02:20:17.850801415Z     config.load()
-2026-03-17T02:20:17.850804475Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-2026-03-17T02:20:17.850959569Z     self.loaded_app = import_from_string(self.app)
-2026-03-17T02:20:17.850981199Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.850984379Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 22, in import_from_string
-2026-03-17T02:20:17.851068721Z     raise exc from None
-2026-03-17T02:20:17.851075661Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-2026-03-17T02:20:17.851150323Z     module = importlib.import_module(module_str)
-2026-03-17T02:20:17.851190414Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.851196034Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-2026-03-17T02:20:17.851283456Z     return _bootstrap._gcd_import(name[level:], package, level)
-2026-03-17T02:20:17.851314287Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:17.851319017Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-2026-03-17T02:20:17.851321187Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-2026-03-17T02:20:17.851330537Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-2026-03-17T02:20:17.851334087Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-2026-03-17T02:20:17.851356008Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-2026-03-17T02:20:17.851359758Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-03-17T02:20:17.851362968Z   File "/app/backend/app.py", line 7, in <module>
-2026-03-17T02:20:17.85144672Z     from scraper import run_scraper
-2026-03-17T02:20:17.8514509Z ModuleNotFoundError: No module named 'scraper'
-2026-03-17T02:20:19.577649119Z ==> Exited with status 1
-2026-03-17T02:20:19.580437003Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
-2026-03-17T02:20:22.074662806Z Traceback (most recent call last):
-2026-03-17T02:20:22.074709576Z   File "/usr/local/bin/uvicorn", line 8, in <module>
-2026-03-17T02:20:22.074752217Z     sys.exit(main())
-2026-03-17T02:20:22.074762268Z              ^^^^^^
-2026-03-17T02:20:22.074766768Z   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-2026-03-17T02:20:22.075015693Z     return self.main(*args, **kwargs)
-2026-03-17T02:20:22.075020913Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.075024654Z   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-2026-03-17T02:20:22.075258469Z     rv = self.invoke(ctx)
-2026-03-17T02:20:22.075263229Z          ^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.075269919Z   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-2026-03-17T02:20:22.075509344Z     return ctx.invoke(self.callback, **ctx.params)
-2026-03-17T02:20:22.075528065Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.075531285Z   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-2026-03-17T02:20:22.075713169Z     return callback(*args, **kwargs)
-2026-03-17T02:20:22.075718489Z            ^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.075722109Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-2026-03-17T02:20:22.075871202Z     run(
-2026-03-17T02:20:22.075877472Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-2026-03-17T02:20:22.076056136Z     server.run()
-2026-03-17T02:20:22.076060666Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-2026-03-17T02:20:22.076148839Z     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-2026-03-17T02:20:22.07619292Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.07619754Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-2026-03-17T02:20:22.076277001Z     return runner.run(main)
-2026-03-17T02:20:22.076281681Z            ^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.076285131Z   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-2026-03-17T02:20:22.076384354Z     return self._loop.run_until_complete(task)
-2026-03-17T02:20:22.076392324Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.076396024Z   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-2026-03-17T02:20:22.162810194Z     return future.result()
-2026-03-17T02:20:22.162849085Z            ^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.162853635Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-2026-03-17T02:20:22.162922596Z     await self._serve(sockets)
-2026-03-17T02:20:22.162931847Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-2026-03-17T02:20:22.163039469Z     config.load()
-2026-03-17T02:20:22.163044979Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-2026-03-17T02:20:22.163219833Z     self.loaded_app = import_from_string(self.app)
-2026-03-17T02:20:22.163233853Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.163364396Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 22, in import_from_string
-2026-03-17T02:20:22.163368646Z     raise exc from None
-2026-03-17T02:20:22.163371696Z   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-2026-03-17T02:20:22.163451508Z     module = importlib.import_module(module_str)
-2026-03-17T02:20:22.163480409Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.163483939Z   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-2026-03-17T02:20:22.163634172Z     return _bootstrap._gcd_import(name[level:], package, level)
-2026-03-17T02:20:22.163646942Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-03-17T02:20:22.163651263Z   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-2026-03-17T02:20:22.163654623Z   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-2026-03-17T02:20:22.163660913Z   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-2026-03-17T02:20:22.163664073Z   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-2026-03-17T02:20:22.163667063Z   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-2026-03-17T02:20:22.163673803Z   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-03-17T02:20:22.163677233Z   File "/app/backend/app.py", line 7, in <module>
-2026-03-17T02:20:22.163791315Z     from scraper import run_scraper
-2026-03-17T02:20:22.163795946Z ModuleNotFoundError: No module named 'scraper'
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alerta SUNAT Demo</title>
+<meta charset="UTF-8">
+</head>
+
+<body style="font-family:Arial">
+
+<h2>Demo Alerta SUNAT</h2>
+
+<p><b>Paso 1:</b> Loguéate primero en SUNAT</p>
+
+<button onclick="abrirSunat()">
+1️⃣ Abrir SUNAT
+</button>
+
+<br><br>
+
+<p><b>Paso 2:</b> Ingresa tu RUC</p>
+
+<input id="ruc" placeholder="Ingresa tu RUC">
+
+<button onclick="consultar()">
+2️⃣ Consultar buzón
+</button>
+
+<script>
+
+function abrirSunat(){
+    window.open(
+        "https://e-menu.sunat.gob.pe/cl-ti-itmenu/MenuInternet.htm?exe=buzon",
+        "_blank"
+    )
+}
+
+function consultar(){
+
+    const ruc = document.getElementById("ruc").value
+
+    if(!ruc){
+        alert("Ingresa RUC")
+        return
+    }
+
+    window.location.href = "/consulta/" + ruc
+
+}
+
+</script>
+
+</body>
+</html>
