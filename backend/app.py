@@ -39,6 +39,7 @@ async def save_session(request: Request):
 
     try:
         data = await request.json()
+        print("DATA RECIBIDA:", data)
     except:
         return {"error": "No se pudo leer el JSON"}
 
